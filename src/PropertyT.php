@@ -22,7 +22,7 @@ class PropertyT
 
     public function addProtect($name)
     {
-        $this->string .= PHP_EOL . '    protect $' . $name . ';' . PHP_EOL;
+        $this->string .= PHP_EOL . '    protected $' . $name . ';' . PHP_EOL;
     }
 
     public function addPrivate($name)
