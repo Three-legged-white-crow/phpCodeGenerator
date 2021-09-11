@@ -6,7 +6,6 @@ declare(strict_types=1);
 namespace test;
 
 
-use src\ClassCommentT;
 use src\ClassT;
 
 class ClassTTest extends \PHPUnit\Framework\TestCase
@@ -19,11 +18,9 @@ class ClassTTest extends \PHPUnit\Framework\TestCase
 
     public function testClassComment()
     {
-        $class         = new ClassT('Test');
-        $classCommentT = new ClassCommentT();
-        $classCommentT->classComment('@property string $goodsName');
-        $classCommentT->classComment('@property string $goodsName');
-        $class->addClassComment($classCommentT);
+        $class = new ClassT('Test');
+        $class->classComment('@property string $goodsName');
+        $class->classComment('@property string $goodsName');
         echo $class;
     }
 }
