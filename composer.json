@@ -1,7 +1,7 @@
 {
-  "name": "three-legged-white-crow/php_code_generator",
-  "description": "",
-  "type": "project",
+  "name": "three-legged-white-crow/php-code-generator",
+  "description": "generator php code",
+  "type": "library",
   "keywords": [
     "auto",
     "generator",
