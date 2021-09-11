@@ -13,10 +13,21 @@ class ClassT
     protected $classCommentResult;
     protected $class;
     protected $property;
+    protected $method;
 
     public function __construct($className)
     {
         $this->class = 'class ' . $className;
+    }
+
+    public function __toString()
+    {
+        $this->classCommentResult = '/**' . PHP_EOL . $this->classComment . ' */' . PHP_EOL;
+        $this->string             = $this->classCommentResult . $this->class . PHP_EOL . "{" . PHP_EOL;
+        $this->string             .= $this->property;
+        $this->string             .= $this->method;
+
+        return $this->string . PHP_EOL . "}";
     }
 
     public function addClassComment($comment)
@@ -39,13 +50,27 @@ class ClassT
         $this->property .= PHP_EOL . '    private $' . $name . ';' . PHP_EOL;
     }
 
-    public function __toString()
+    public function addPublicMethod($methodName, $params, $content)
     {
-        $this->classCommentResult = '/**' . PHP_EOL . $this->classComment . ' */' . PHP_EOL;
-        $this->string             = $this->classCommentResult . $this->class . PHP_EOL . "{" . PHP_EOL;
-        $this->string             .= $this->property;
-
-        return $this->string . PHP_EOL . "}";
+        $this->method .= PHP_EOL . '    public function ' . $methodName . '(' . $params . ')' . PHP_EOL
+                         . '    {' . PHP_EOL
+                         . '        ' . $content . PHP_EOL
+                         . '    }';
     }
 
+    public function addProtectedMethod($methodName, $params, $content)
+    {
+        $this->method .= PHP_EOL . '    protected function ' . $methodName . '(' . $params . ')' . PHP_EOL
+                         . '    {' . PHP_EOL
+                         . '        ' . $content . PHP_EOL
+                         . '    }';
+    }
+
+    public function addPrivateMethod($methodName, $params, $content)
+    {
+        $this->method .= PHP_EOL . '    private function ' . $methodName . '(' . $params . ')' . PHP_EOL
+                         . '    {' . PHP_EOL
+                         . '        ' . $content . PHP_EOL
+                         . '    }';
+    }
 }

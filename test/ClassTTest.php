@@ -33,4 +33,15 @@ class ClassTTest extends \PHPUnit\Framework\TestCase
         $class->addClassComment('@property string $goodsName');
         echo $class;
     }
+
+    public function testMethod()
+    {
+        $class = new ClassT('Test');
+        $class->addPublicProperty('goods');
+        $class->addProtectProperty('pp');
+        $class->addClassComment('@property string $goodsName');
+        $class->addClassComment('@property string $goodsName');
+        $class->addPublicMethod('HelloWorld', '', "echo 'hello world';");
+        echo $class;
+    }
 }
