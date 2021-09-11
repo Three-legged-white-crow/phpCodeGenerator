@@ -1,4 +1,19 @@
 {
+  "name": "three-legged-white-crow/php_code_generator",
+  "description": "",
+  "type": "project",
+  "keywords": [
+    "auto",
+    "generator",
+    "php"
+  ],
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "shuimengzhi",
+      "email": "shuimengzhi@gmail.com"
+    }
+  ],
   "require": {
     "phpunit/phpunit": "7.5.20"
   },
