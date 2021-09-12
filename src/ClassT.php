@@ -15,6 +15,7 @@ class ClassT
     protected $property;
     protected $method;
     protected $use;
+    protected $trait;
 
     public function __construct($className, $extends = '')
     {
@@ -30,6 +31,7 @@ class ClassT
         $this->classCommentResult = $this->use . PHP_EOL . '/**' . PHP_EOL . $this->classComment . ' */'
                                     . PHP_EOL;
         $this->string             = $this->classCommentResult . $this->class . PHP_EOL . "{" . PHP_EOL;
+        $this->string             .= $this->trait;
         $this->string             .= $this->property;
         $this->string             .= $this->method;
 
@@ -83,5 +85,10 @@ class ClassT
                          . '    {' . PHP_EOL
                          . '        ' . $content . PHP_EOL
                          . '    }';
+    }
+
+    public function addTrait($name)
+    {
+        $this->trait .= '    use ' . $name . ';' . PHP_EOL;
     }
 }

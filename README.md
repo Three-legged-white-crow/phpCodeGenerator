@@ -13,6 +13,7 @@ input:
 ```
         $class = new ClassT('Test', 'Father');
         $class->addUse('Test/add');
+        $class->addTrait('Singleton');
         $class->addPublicProperty('goods');
         $class->addProtectProperty('pp');
         $class->addClassComment('@property string $goodsName');
@@ -32,6 +33,7 @@ use Test/add;
  */
 class Test extends Father
 {
+    use Singleton;
 
     public $goods;
 

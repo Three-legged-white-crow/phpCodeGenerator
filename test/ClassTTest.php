@@ -45,4 +45,17 @@ class ClassTTest extends \PHPUnit\Framework\TestCase
         $class->addPublicMethod('HelloWorld', '', "echo 'hello world';");
         echo $class;
     }
+
+    public function testTrait()
+    {
+        $class = new ClassT('Test', 'Father');
+        $class->addUse('Test/add');
+        $class->addTrait('Singleton');
+        $class->addPublicProperty('goods');
+        $class->addProtectProperty('pp');
+        $class->addClassComment('@property string $goodsName');
+        $class->addClassComment('@property string $goodsName');
+        $class->addPublicMethod('HelloWorld', '', "echo 'hello world';");
+        echo $class;
+    }
 }
