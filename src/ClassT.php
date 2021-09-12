@@ -68,7 +68,7 @@ class ClassT
         $this->method .= PHP_EOL . '    public function ' . $methodName . '(' . $params . ')' . PHP_EOL
                          . '    {' . PHP_EOL
                          . '        ' . $content . PHP_EOL
-                         . '    }';
+                         . '    }' . PHP_EOL;
     }
 
     public function addProtectedMethod($methodName, $params, $content)
@@ -76,7 +76,7 @@ class ClassT
         $this->method .= PHP_EOL . '    protected function ' . $methodName . '(' . $params . ')' . PHP_EOL
                          . '    {' . PHP_EOL
                          . '        ' . $content . PHP_EOL
-                         . '    }';
+                         . '    }' . PHP_EOL;
     }
 
     public function addPrivateMethod($methodName, $params, $content)
@@ -84,7 +84,7 @@ class ClassT
         $this->method .= PHP_EOL . '    private function ' . $methodName . '(' . $params . ')' . PHP_EOL
                          . '    {' . PHP_EOL
                          . '        ' . $content . PHP_EOL
-                         . '    }';
+                         . '    }' . PHP_EOL;
     }
 
     public function addTrait($name)
