@@ -12,7 +12,7 @@ class NamespaceT
 
     public function __construct($namespace)
     {
-        $this->namespace = 'namespace ' . $namespace . ';' . PHP_EOL;
+        $this->namespace = 'namespace ' . $namespace . ';' . PHP_EOL . PHP_EOL;
     }
 
     public function __toString()
