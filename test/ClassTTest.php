@@ -36,7 +36,8 @@ class ClassTTest extends \PHPUnit\Framework\TestCase
 
     public function testMethod()
     {
-        $class = new ClassT('Test');
+        $class = new ClassT('Test', 'Father');
+        $class->addUse('Test/add');
         $class->addPublicProperty('goods');
         $class->addProtectProperty('pp');
         $class->addClassComment('@property string $goodsName');

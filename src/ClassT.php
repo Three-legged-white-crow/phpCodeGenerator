@@ -14,20 +14,31 @@ class ClassT
     protected $class;
     protected $property;
     protected $method;
+    protected $use;
 
-    public function __construct($className)
+    public function __construct($className, $extends = '')
     {
-        $this->class = 'class ' . $className;
+        if ($extends) {
+            $this->class = 'class ' . $className . ' extends ' . $extends;
+        } else {
+            $this->class = 'class ' . $className;
+        }
     }
 
     public function __toString()
     {
-        $this->classCommentResult = '/**' . PHP_EOL . $this->classComment . ' */' . PHP_EOL;
+        $this->classCommentResult = $this->use . PHP_EOL . '/**' . PHP_EOL . $this->classComment . ' */'
+                                    . PHP_EOL;
         $this->string             = $this->classCommentResult . $this->class . PHP_EOL . "{" . PHP_EOL;
         $this->string             .= $this->property;
         $this->string             .= $this->method;
 
         return $this->string . PHP_EOL . "}";
+    }
+
+    public function addUse($use)
+    {
+        $this->use .= 'use ' . $use . ';' . PHP_EOL;
     }
 
     public function addClassComment($comment)

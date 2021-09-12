@@ -11,7 +11,8 @@ composer require three-legged-white-crow/php-code-generator dev-main
 input:
 
 ```
-        $class = new ClassT('Test');
+        $class = new ClassT('Test', 'Father');
+        $class->addUse('Test/add');
         $class->addPublicProperty('goods');
         $class->addProtectProperty('pp');
         $class->addClassComment('@property string $goodsName');
@@ -23,11 +24,13 @@ input:
 output:
 
 ```
+use Test/add;
+
 /**
  * @property string $goodsName
  * @property string $goodsName
  */
-class Test
+class Test extends Father
 {
 
     public $goods;
@@ -39,4 +42,5 @@ class Test
         echo 'hello world';
     }
 }
+
 ```
