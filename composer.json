@@ -1,26 +1,41 @@
 {
-  "name": "three-legged-white-crow/php-code-generator",
-  "description": "generator php code",
-  "type": "library",
-  "keywords": [
-    "auto",
-    "generator",
-    "php"
-  ],
-  "license": "Apache-2.0",
-  "authors": [
-    {
-      "name": "shuimengzhi",
-      "email": "shuimengzhi@gmail.com"
+    "name": "three-legged-white-crow/php-code-generator",
+    "description": "Generate PHP class / namespace / file-header code as strings",
+    "type": "library",
+    "keywords": [
+        "auto",
+        "generator",
+        "scaffold",
+        "code-generator",
+        "php"
+    ],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "shuimengzhi",
+            "email": "shuimengzhi@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^12.5.22"
+    },
+    "autoload": {
+        "psr-4": {
+            "src\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "test\\": "test"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true
     }
-  ],
-  "require": {
-    "phpunit/phpunit": "12.0.6"
-  },
-  "autoload": {
-    "psr-4": {
-      "src\\": "src",
-      "test\\": "test"
-    }
-  }
 }
